@@ -20,7 +20,9 @@ For the story, I wanted it to closely follow real life. With this, I created dra
 
 ![](images/circleoflife.png)
 
-In the code, I implemented certain behaviors to the Eagle so it would follow the closest Fox, and if it got close enough, it would "eat" the fox and the fox would disappear from the arraylist. This would similarly happen with foxes and mice, where the fox would eat the closest mouse. In order to add the behavior of worry, when a certain number of mice or foxes exceeded the normal ratio of the food chain, they would change their image animation and a warning would pop up on the corner
+In the code, I implemented certain behaviors to the Eagle so it would follow the closest Fox, and if it got close enough, it would "eat" the fox and the fox would disappear from the arraylist. This would similarly happen with foxes and mice, where the fox would eat the closest mouse.
+
+In order to add the behavior of worry, when a certain number of mice or foxes exceeded the normal ratio of the food chain, they would change their image animation and a warning would pop up on the corner.
 
 Foxes:
 
