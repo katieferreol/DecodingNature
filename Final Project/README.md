@@ -7,7 +7,7 @@ Deciding the topic of my project was not easy, as I actually wanted it to be a v
 
 However, after a series of failed attempts, I realized that this is not possible, as the particle trail was only seen if a background wasn’t implemented. Because of this, the black background causes only the circular shape of the line’s tip to be seen, making use of a multitude of different RGB values from the picture instead of revealing it instead (Figure 1).
 
-![](images/failedattempt.png)
+![](images/failattempt.png)
 
 ## Inspiration
  After this failed attempt, I decided to start from scratch once more and focus my project on the world around me. I was inspired by the Circle of Life in Lion King, specifically in what Mufasa said about how deer eat the grass, lions eat the deer, and lions die and become the grass that the deer eat once again. With this, I wanted to implement certain behaviors in my Processing particles such as following, worry, and avoidance.
