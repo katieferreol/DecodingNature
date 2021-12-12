@@ -24,8 +24,8 @@ In the code, I implemented certain behaviors to the Eagle so it would follow the
 
 Foxes:
 
-![](images/worriedmouse.gif)
-![](images/mouseworried.png)
+![](images/worriedfox.gif)
+![](images/foxworried.png)
 
 
 Mouse:
