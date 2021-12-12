@@ -31,14 +31,13 @@ class Eagle extends Animal {
     }
   }
 
-
   void followFox() {
     if (x+length >= width || y+length >= height || x-length <= 0 || y-length <= 0) {
       angle += 180;
     }
     translate(x, y);
     if (fox1.size() > 0) {
-      Fox pred1 = fox1.get(int(random(fox1.size())));
+      Fox pred1 = fox1.get(0);
       angleOfPrey = solveAngle((pred1.x-x) / dist(0, 0, x-pred1.x, y-pred1.y), (y-pred1.y) / dist(0, 0, x-pred1.x, y-pred1.y));
       angle = angleOfPrey;
     }
@@ -53,6 +52,14 @@ class Eagle extends Animal {
     textAlign(CENTER);
     textSize(20);
     text(secondsToDie, x, y);
+  }
+  
+  void addEagle() {
+    if (keyPressed) {
+      if (key == 'e' || key == 'E') {
+        eagle1.add(new Eagle(random(width), random(height)));
+      }
+    }
   }
 
   Eagle(float x, float y) {
