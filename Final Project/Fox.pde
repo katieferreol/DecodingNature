@@ -6,6 +6,8 @@ class Fox extends Animal {
   int foodCount = 0;
   int foodNeed = 5;
   PImage fox = loadImage("fox.png");
+  PImage foxworried = loadImage("foxworried.png");
+  PImage foxwarning = loadImage("foxwarning.png");
 
   void update() {
     //movement
@@ -33,6 +35,10 @@ class Fox extends Animal {
 
   void display() {
     image(fox, x, y, 110, 90);
+    if ((foxesEaten > 10) && (eaglesDied < foxesEaten/5)) {
+      image(foxworried, x, y, 110, 90);
+      image(foxwarning, 970, 20, 180, 180);
+    }
     fill(0);
     textAlign(CENTER);
     textSize(20);
@@ -41,10 +47,14 @@ class Fox extends Animal {
   
   //prevents the fox population from dying to ensure looping during showcase
   void newFox() {
-      if (fox1.size() < 1) {
-      foxoffspring += 0.01;
-      if (foxoffspring > 0) {
-        foxoffspring = 0;
+    if (fox1.size() < 1) {
+      fox1.add(new Fox(random(width), random(height)));
+    }
+  }
+  
+  void addFox() {
+    if (keyPressed) {
+      if (key == 'f' || key == 'F') {
         fox1.add(new Fox(random(width), random(height)));
       }
     }
