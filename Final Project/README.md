@@ -38,4 +38,8 @@ Mouse:
 
 ## Interactivity
 
+With me being finished with the code early on, I wanted to add an element of interactivity, especially because this will be displayed in the IM Showcase. With this said, I wanted to revisit my earlier failed attempt by adding a camera code to it. Learning off of Dan Shiffman's codes, I was able to track a certain color when shown to the camera.
+
 ![](images/colortrack.gif)
+
+With this said, I implemented this into my ecosystem so that, when a certain color is shown to the camera, a certain species will appear. I actually had problems making it so that the species would only appear once or twice, but setting the if() statement to only add when the frame rate was at 100 fixed it.
