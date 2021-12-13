@@ -1,5 +1,7 @@
 # FINAL PROJECT: Interactive Ecosystem
 
+My final project for Decoding Nature entails an interactive ecosystem, where users can hold up different colors of paper and add their own animals to the ecosystem, seeing how surival of the fittest will bring the ecosystem to an equilibria.
+
 ## Previous Idea
 Deciding the topic of my project was not easy, as I actually wanted it to be a virtual painting experience, where the Processing window would take a picture of the audience, present a black screen, and users would be able to paint the canvas through a series of lined particles, revealing the picture accordingly.
 
