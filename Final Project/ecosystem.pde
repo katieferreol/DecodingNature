@@ -1,3 +1,6 @@
+import processing.video.*;
+Capture video;
+
 ArrayList<Eagle> eagle1 = new ArrayList<Eagle>();
 ArrayList<Fox> fox1 = new ArrayList<Fox>();
 ArrayList<Mouse> mouse1 = new ArrayList<Mouse>();
@@ -16,6 +19,7 @@ int eaglesDied = 0;
 
 void setup() {
   size(1200, 700);
+
   bg = loadImage("bg.jpg");
   mousebutton = loadImage("mousebutton.png");
   foxbutton = loadImage("foxbutton.png");
@@ -31,6 +35,20 @@ void setup() {
   fox1.add(new Fox(random(width), random(height)));
 
   eagle1.add(new Eagle(random(width), random(height)));
+
+  //accessing the camera
+  String[] cameras = Capture.list();
+  printArray(cameras);
+  video = new Capture(this, cameras[0]);
+
+  //accessing the second window
+  String[] args = {"TwoFrameTest"};
+  SecondApplet sa = new SecondApplet();
+  PApplet.runSketch(args, sa);
+}
+
+public void captureEvent(Capture video) {
+  video.read();
 }
 
 void draw() {
@@ -38,11 +56,13 @@ void draw() {
   background(bg);
   textSize(30);
 
+  //instructions showing what keys to press
   image(mousebutton, 50, 60, 200, 45);
   image(foxbutton, 265, 60, 180, 45);
   image(eaglebutton, 470, 60, 200, 45);
   text("Mice Eaten: " + miceEaten + "      " + "Foxes Eaten: " + foxesEaten + "      " + "Eagles Died: " + eaglesDied, 350, 40);
 
+  //Mouse initialization
   for (int i = 0; i < mouse1.size(); i++) {
     Mouse p = mouse1.get(i);
     p.update();
@@ -61,12 +81,14 @@ void draw() {
     }
   }
 
+  // Fox initialization
   for (int i = 0; i < fox1.size(); i++) {
     Fox pred = fox1.get(i);
     pred.update();
     pred.display();
   }
 
+  // Eagle initialization
   for (int i = 0; i < eagle1.size(); i++) {
     Eagle pred2 = eagle1.get(i);
     if (pred2.secondsToDie < 0) {
@@ -93,13 +115,20 @@ void draw() {
       }
     }
   }
-  
+
+  //accessing color tracker and add a new animal
   for (int i = 0; i < 1; i++) {
     Mouse m = mouse1.get(i);
-    m.addMouse();
+    ///m.addMouse();
+    m.colorMouse();
+    m.addnewMouse();
     Fox f = fox1.get(i);
-    f.addFox();
+    //f.addFox();
+    f.colorFox();
+    f.addnewFox();
     Eagle e = eagle1.get(i);
-    e.addEagle();
+    //e.addEagle();
+    e.colorEagle();
+    e.addnewEagle();
   }
 }
